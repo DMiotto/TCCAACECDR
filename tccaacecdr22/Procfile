@@ -1,0 +1,1 @@
+web: gunicorn tccaacecdr22.wsgi

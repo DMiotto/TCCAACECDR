@@ -1,0 +1,169 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    form {
+        max-width: 300px;
+        margin: 50 auto;
+        text-align: center;
+    }
+    body {
+        max-width: 1500px;
+        margin: 50 auto;
+        background-color: #d4d4d4;
+    }
+    h1 {
+        font-size: 50;
+        text-align: center;
+        margin-bottom: 20px;
+        color: black;
+        text-shadow:
+            -1px -1px 0px rgb(255, 255, 255), 
+            -1px 1px 0px rgb(255, 255, 255),                    
+            1px -1px 0px rgb(255, 255, 255),                  
+            1px 0px 0px rgb(255, 255, 255);
+    }
+    h2 {
+        font-size: 30;
+        max-width: 1500px;
+        background-color: #d4d4d4;
+    }
+    h3 {
+        font-size: 50;
+        max-width: 430px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        color: black;
+        text-shadow:
+            -1px -1px 0px rgb(255, 255, 255), 
+            -1px 1px 0px rgb(255, 255, 255),                    
+            1px -1px 0px rgb(255, 255, 255),                  
+            1px 0px 0px rgb(255, 255, 255);
+    }
+    h4 {
+        font-size: 30;
+        max-width: 1500px;
+        text-align: justify;
+    }
+    table, td, th {
+        border: 1px solid black;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th {
+        text-align: center;
+        height: 30px;
+    }
+    td {
+        text-align: center;
+        height: 30px;
+    }
+    tr:nth-child(even){
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(odd){
+        background-color: white;
+    }
+</style>
+
+<h4 class="text-center mb-4">Dados de Entrada</h4>
+<table>
+    <thead>
+        <tr>
+        <th scope="col">Variável</th>
+        <th scope="col">Valor</th>
+        </tr>
+        </thead>
+    <tbody>
+    <tr class="row100 body">
+    <td class="cell100 column1">Relação de Transmissão</td>
+    <td class="cell100 column2">{{info_reltrans1}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Módulo</td>
+    <td class="cell100 column2">{{info_modulo1}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Material</td>
+    <td class="cell100 column2">{{info_material1}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Rotação</td>
+    <td class="cell100 column2">{{info_rpm1}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Ze</td>
+    <td class="cell100 column2">{{info_Ze}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Kh</td>
+    <td class="cell100 column2">{{info_Kh}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Khma</td>
+    <td class="cell100 column2">{{info_Khma}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Vp</td>
+    <td class="cell100 column2">{{info_Vp}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Khpf</td>
+    <td class="cell100 column2">{{info_Khpf}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Kv</td>
+    <td class="cell100 column2">{{info_Kv}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Ks</td>
+    <td class="cell100 column2">{{info_Ks}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Zi</td>
+    <td class="cell100 column2">{{info_Zi}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">σhpf</td>
+    <td class="cell100 column2">{{info_σhpf}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">HB</td>
+    <td class="cell100 column2">{{info_HB}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">Zn</td>
+    <td class="cell100 column2">{{info_Zn1}}</td>
+    </tr>
+    <tr class="row100 body">
+    <td class="cell100 column1">σhp</td>
+    <td class="cell100 column2">{{info_σhp}}</td>
+    </tr>
+    </tbody>
+</table>
+&nbsp
+<h4 class="text-center mb-4">Resultado</h4>
+<table>
+    <tr>
+        <th><h4> {{result}} </h4></th>
+    </tr>
+</table>
+
+  
+
+<form class="p-3" action="index">
+    <button type="submit" class="btn btn-success">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
+</svg>
+        Voltar
+      </button>
+
+{% endblock %}

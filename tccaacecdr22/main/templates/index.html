@@ -1,0 +1,408 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <title>Bootstrap Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+<style>
+  form {
+      max-width: 900px;
+      display: block;
+      margin: 0 auto;
+  }
+  body {
+      background-color: #e4e4e4;
+  }
+  h1 {
+      font-size: 50;
+      margin: 0 auto;
+      margin-top: 20px;
+      text-align: center;
+      color: black;
+      text-shadow:
+          -1px -1px 0px rgb(255, 255, 255), 
+          -1px 1px 0px rgb(255, 255, 255),                    
+          1px -1px 0px rgb(255, 255, 255),                  
+          1px 0px 0px rgb(255, 255, 255);
+  }
+  ul1 {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  ul2 {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  ul3 {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top: 350px;
+  }
+  ul4 {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 350px;
+  }
+  ul5 {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top: 800px;
+  }
+  ul6 {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 800px;
+  }
+
+</style>
+
+<title> TCC Diovanni </title>
+
+<html>
+<body> 
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <div class="col-md-3 text-end">
+        <form class="p-3" action="sobre">
+          <button type="submit" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+              </svg> Sobre </button>
+        </form>
+      </div>
+    </header>
+    </div> 
+    <h1 class="display-6">Análise de Crateramento em Engrenagens Cilíndricas de Dentes Retos</h1>
+<!--
+    <ul1>
+      <li> 
+        <img src="https://www.rolamentosbr.com.br/media/sig_DbCnlx9yPM/categorias/eixos/eixos-07.jpeg" width="450" height="350" alt="Eixo de transmissão">
+      </li>
+    </ul1>
+    
+    <ul2>
+      <li> 
+        <img src="https://www.rolamentobrasil.com.br/media/sig_01PvbOF3mz/categorias/eixos/eixos-06.jpeg" width="450" height="350" alt="Eixo de transmissão">
+      </li>
+    </ul2>
+
+    <ul3>
+      <li> 
+        <img src="https://www.rolamentosbr.com.br/media/sig_DbCnlx9yPM/categorias/eixos/eixos-01.jpeg" width="450" height="450" alt="Eixo de transmissão">
+      </li>
+    </ul3>
+
+    <ul4>
+      <li> 
+        <img src="https://d3mi7368052s1h.cloudfront.net/Custom/Content/Products/10/07/1007345_eixo-principal-de-aco-da-transmis-239785_m2_637274613869535150.png" width="450" height="450" alt="Eixo de transmissão">
+      </li>
+    </ul4>
+
+    <ul5>
+      <li> 
+        <img src="https://www.autoserviceprofessional.com/ext/resources/legacy_articles/cv-joint-tech-a-primer-on-constant-velocity-drive-joints-and-diagnostic-tips.jpg" width="450" height="450" alt="Eixo de transmissão">
+      </li>
+    </ul5>
+
+    <ul6>
+      <li> 
+        <img src="https://www.rolamentosbr.com.br/media/sig_DbCnlx9yPM/categorias/eixos/eixos-02.jpeg" width="450" height="450" alt="Eixo de transmissão">
+      </li>
+    </ul6>
+-->
+<form class="p-3" action="results" method="POST">
+  {% csrf_token %}
+      
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6">
+            <label for="L1_C1"> Insira o valor da relação de transmissão </label>
+            <input type="float" class="form-control w-100" id="L1_C1" name="p_transmissao" value="0">
+          </div>
+          <div class="col-6">
+            <label for="L1_C2"> Insira o valor do módulo </label>
+            <input type="float" class="form-control w-100" id="L1_C2" name="p_modulo">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6">
+            <label for="L2_C1"> Insira o valor da rotação em [RPM] </label>
+            <input type="float" class="form-control w-100" id="L2_C1" name="p_rpm" value="0">
+          </div>
+          <div class="col-6">
+            <label for="L2_C2"> Insira a quantidade de dentes do pinhão </label>
+            <input type="float" class="form-control w-100" id="L2_C2" name="dentes_pinhao">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6">
+            <label for="L3_C1"> Insira o tempo de vida [H] </label>
+            <input type="float" class="form-control w-100" id="L3_C1" name="t_vida" value="0">
+          </div>
+        </div>
+      </div>
+
+          <!- PERGUNTA_1: ->
+      <div class="col-12">
+        <label for="pergunta_1"> Escolha o dado de entrada </label>
+        <select class="form-control" id="pergunta_1" name="dado_entrada1" value="0">
+             <option value="1"> Torque </option>
+             <option value="2"> Potência </option>
+             <option value="3"> Força tangencial </option>
+        </select>
+      </div>
+
+        <div class="form-group" id="resposta_1">
+          <div class="col-6">
+            <label for="campo3_1_3"> Digite o valor do torque [N·m] </label>
+            <input type="float" class="form-control w-100" id="campo3_1_3" name="p_torque" value="0">
+          </div>
+        </div>
+
+        <div class="col-6" id="resposta_2">
+            <label for="campo3_1_3"> Digite o valor da potência [W] </label>
+            <input type="float" class="form-control w-100" id="campo3_1_3" name="p_potencia" value="0">
+          </div>
+
+        <div class="col-6" id="resposta_3">
+          <label for="campo3_1_3"> Digite o valor da força tangencial [N] </label>
+          <input type="float" class="form-control w-100" id="campo3_1_3" name="p_forca_tangencial" value="0">
+        </div>
+
+      <!- PERGUNTA_2: ->
+      <div class="form-group">
+        <label for="pergunta_2"> Escolha o material </label>
+        <select class="form-control" id="pergunta_2" name="material" value="0">
+              <option value="1"> Aço x Aço </option>
+              <option value="2"> Ferro fundido x Ferro fundido </option>
+              <option value="3"> Aplicar os dados manualmente </option>
+        </select>
+      </div>
+
+      <div class="form-group" id="pergunta_3">
+        <div class="row">
+          <div class="col-6">
+            <label for="campo1_1"> Digite o valor do módulo de elasticidade do pinhão (Ep) [MPa] </label>
+            <input type="float" class="form-control w-100" id="campo1_1" name="E_p" value="0">
+          </div>
+          <div class="col-6">
+            <label for="campo2_1"> Digite o valor do módulo de elasticidade da coroa (Eg) [MPa] </label>
+            <input type="float" class="form-control w-100" id="campo2_1" name="E_g" value="0">
+          </div>
+          <div class="col-6">
+            <label for="campo1_2"> Digite o valor do coeficiente de Poisson do Pinhão </label>
+            <input type="float" class="form-control w-100" id="campo1_2" name="poison_p" value="0">
+          </div>
+          <div class="col-6">
+            <label for="campo2_2"> Digite o valor do coeficiente de Poisson da Coroa </label>
+            <input type="float" class="form-control w-100" id="campo2_2" name="poison_c" value="0">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="pergunta_4"> Escolha a fonte de alimentação </label>
+        <select class="form-control" id="pergunta_3" name="fontealimentacao" value="0">
+              <option value="1"> Uniforme </option>
+              <option value="2"> Choque leve </option>
+              <option value="3"> Choque moderado </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pergunta_5"> Escolha o tipo de máquina </label>
+        <select class="form-control" id="pergunta_4" name="tipomaquina" value="0">
+              <option value="1"> Uniforme </option>
+              <option value="2"> Choque leve </option>
+              <option value="3"> Choque moderado </option>
+              <option value="4"> Choque pesado </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pergunta_5"> Digite o valor de Av de acordo com o gráfico abaixo </label>
+        <input type="float" select class="form-control" id="pergunta_5" name="carga" value="0">
+        <figure class="figure">
+          <img src="C:\Users\dmiot\Desktop\Estágio\TCC2\Imagens\Kv.PNG" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">A caption for the above image.</figcaption>
+        </figure>
+      </div>
+
+      <div class="form-group">
+        <label for="pergunta_4"> Fator de formato da face do dente (Khmc) </label>
+        <select class="form-control" id="pergunta_4" name="khmc" value="0">
+              <option value="1"> Dente sem coroamento </option>
+              <option value="2"> Dente coroado ou com correção de desvio </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pergunta_4"> Fator de carga de deflexão (Khpm) </label>
+        <select class="form-control" id="pergunta_4" name="khpm" value="0">
+              <option value="1"> S1/S < 0.175 </option>
+              <option value="2"> S1/S >= 0.175 </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pergunta_4"> Fator de alinhamento </label>
+        <select class="form-control" id="pergunta_4" name="fatoralinhamento" value="0">
+              <option value="1"> Engrenagem aberta </option>
+              <option value="2"> Engrenagem fechada/comercial </option>
+              <option value="3"> Engrenagem fechada de precisão </option>
+              <option value="4"> Engrenagem fechada de alta precisão </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pergunta_4"> Fator de ajuste (Khe) </label>
+        <select class="form-control" id="pergunta_4" name="khe" value="0">
+              <option value="1"> Engrenagem e ajustada na montagem </option>
+              <option value="2"> Compatibilidade da engrenagem e melhorada lapidando </option>
+              <option value="2"> Todos os outros casos </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pergunta_4"> Fator de confiabilidade </label>
+        <select class="form-control" id="pergunta_4" name="confiabilidade" value="0">
+              <option value="1"> 0,50</option>
+              <option value="2"> 0,90 </option>
+              <option value="3"> 0,99 </option>
+              <option value="4"> 0,999 </option>
+              <option value="5"> 0,9999 </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pergunta_5"> Digite o valor da dureza </label>
+        <input type="float" select class="form-control" id="pergunta_5" name="dureza" value="0">
+      </div>
+      
+      <div class="d-grid gap-3">
+          <button type="submit" class="btn btn-success">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
+          <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"></path>
+          <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"></path>
+          </svg>
+          Calcular
+          </button>
+      </div>
+      
+      
+    </form>
+
+<script>
+
+$("#pergunta_1").change(function() {
+if ($(this).val() == "1") {
+  $('#resposta_1').show();
+  $('#resposta_1').attr('required', '');
+  $('#resposta_1').attr('data-error', 'This field is required.');
+
+  $('#resposta_2').hide();
+  $('#resposta_2').removeAttr('required');
+  $('#resposta_2').removeAttr('data-error');
+
+  $('#resposta_3').hide();
+  $('#resposta_3').removeAttr('required');
+  $('#resposta_3').removeAttr('data-error');
+}
+else if ($(this).val() == "2") {
+  $('#resposta_2').show();
+  $('#resposta_2').attr('required', '');
+  $('#resposta_2').attr('data-error', 'This field is required.');
+
+  $('#resposta_1').hide();
+  $('#resposta_1').removeAttr('required');
+  $('#resposta_1').removeAttr('data-error');
+
+  $('#resposta_3').hide();
+  $('#resposta_3').removeAttr('required');
+  $('#resposta_3').removeAttr('data-error');
+}
+else if ($(this).val() == "3") {
+  $('#resposta_3').show();
+  $('#resposta_3').attr('required', '');
+  $('#resposta_3').attr('data-error', 'This field is required.');
+
+  $('#resposta_1').hide();
+  $('#resposta_1').removeAttr('required');
+  $('#resposta_1').removeAttr('data-error');
+
+  $('#resposta_2').hide();
+  $('#resposta_2').removeAttr('required');
+  $('#resposta_2').removeAttr('data-error');
+}
+else {
+  $('#resposta_1').hide();
+  $('#resposta_1').removeAttr('required');
+  $('#resposta_1').removeAttr('data-error');
+
+  $('#resposta_2').hide();
+  $('#resposta_2').removeAttr('required');
+  $('#resposta_2').removeAttr('data-error');
+
+  $('#resposta_3').hide();
+  $('#resposta_3').removeAttr('required');
+  $('#resposta_3').removeAttr('data-error');
+}
+});
+$("#pergunta_1").trigger("change");
+
+
+$("#pergunta_2").change(function() {
+if ($(this).val() == "3") {
+  $('#pergunta_3').show();
+  $('#pergunta_3').attr('required', '');
+  $('#pergunta_3').attr('data-error', 'This field is required.');
+}
+else {
+  $('#pergunta_3').hide();
+  $('#pergunta_3').removeAttr('required');
+  $('#pergunta_3').removeAttr('data-error');
+}
+});
+$("#pergunta_2").trigger("change");
+
+</script>
+
+</body>
+</html>
+{% endblock %}
